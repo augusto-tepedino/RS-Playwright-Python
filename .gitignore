@@ -1,0 +1,30 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Pytest / Test reports
+.pytest_cache/
+report.html
+trace.zip
+test-results/
+
+# Playwright artifacts
+videos/
+screenshots/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE & Editor settings
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
