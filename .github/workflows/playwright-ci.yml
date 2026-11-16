@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Playwright Test
         run: |
-          python -m pytest PytestPython/playwright/test_rahulshettyacademy.py \
+          python -m pytest PytestPython/playwright/test_framework_web_api.py \
             -v -s \
             -c PytestPython/pytest.ini \
             --html=report.html --self-contained-html
