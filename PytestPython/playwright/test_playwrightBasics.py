@@ -10,7 +10,7 @@ def test_playwrightBasics(playwright: Playwright):
 
 
 def test_playwrightFFBasics(playwright: Playwright):
-    browser = playwright.firefox.launch(headless=False)
+    browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://rahulshettyacademy.com")
@@ -35,7 +35,7 @@ def test_coreLocators(page: Page):
 
 def test_coreLocatorslogged(page: Page):
     iphoneCard = page.locator(".card.h-100").filter(has_text="iphone X")
-    iphoneCard.get_by_role("button", name="Add").click
+    iphoneCard.get_by_role("button", name="Add").click()
     expect(page.get_by_text("Checkout ( 1 )")).to_be_visible()
 
 

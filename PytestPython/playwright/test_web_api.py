@@ -21,7 +21,7 @@ def test_e2e_web_api(playwright: Playwright):
     try:
         # create order -> orderID
         api_utils = APIUtils()
-        order_id = api_utils.createOrder(playwright)
+        order_id = api_utils.createOrder(playwright, email, password)
 
         # login
         page.goto("https://rahulshettyacademy.com/client/")

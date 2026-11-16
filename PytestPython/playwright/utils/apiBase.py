@@ -1,4 +1,3 @@
-import os
 from playwright.sync_api import Playwright
 
 ordersPayload = {
@@ -10,12 +9,8 @@ ordersPayload = {
     ]
 }
 
-email = os.getenv("APP_USER_EMAIL", "rahulshetty@gmail.com")
-password = os.getenv("APP_USER_PASSWORD", "Iamking@000")
-
-
 class APIUtils:
-    def getToken(self, playwright: Playwright):
+    def getToken(self, playwright: Playwright, email, password):
         api_request_context = playwright.request.new_context(base_url="https://rahulshettyacademy.com")
         response = api_request_context.post(
             "/api/ecom/auth/login",
@@ -25,8 +20,8 @@ class APIUtils:
         response_body = response.json()
         return response_body["token"]
 
-    def createOrder(self, playwright: Playwright):
-        token = self.getToken(playwright)
+    def createOrder(self, playwright: Playwright, email, password):
+        token = self.getToken(playwright, email, password)
         api_request_context = playwright.request.new_context(base_url="https://rahulshettyacademy.com")
         response = api_request_context.post(
             "api/ecom/order/create-order",
