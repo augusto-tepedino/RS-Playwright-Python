@@ -15,7 +15,6 @@ def test_e2e_web_api(page: Page, order_id, user_credentials):
 
     order_table = page.get_by_role("row")
 
-    # login
     page.goto("https://rahulshettyacademy.com/client/")
     loginPage.login(email, password)
 
